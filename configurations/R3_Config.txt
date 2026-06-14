@@ -1,1 +1,12 @@
-
+R3(config)# interface loopback 1
+R3(config-if)# ip address 8.8.8.8 255.255.255.255
+R3(config)# interface g1/0
+R3(config-if)# ip address 192.168.23.3 255.255.255.0
+R3(config-if)# no shutdown
+R3(config)# interface g2/0
+R3(config-if)# ip address 192.168.13.3 255.255.255.0
+R3(config-if)# no shutdown
+R3(config)# router eigrp 90
+R3(config)# network 192.168.13.0 0.0.0.255
+R3(config)# network 192.168.23.0 0.0.0.255
+R3(config)# network 8.8.8.8 0.0.0.0
